@@ -1,0 +1,198 @@
+ @media (min-width:1280px){
+body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+.background-image{
+    background-image: url('images/pots-vegetables-harvest.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+.card-img-top{
+    margin: 0;
+}
+
+.formPage{
+    margin-top: 10%;
+    color: white;   
+}
+
+.cardTitle{
+    font-weight: bold;
+    color: black;
+}
+
+.card-text{
+    font-family: 'Lato', sans-serif;
+    color: white;
+}
+
+.navVegan{
+    justify-content: center;
+}
+
+.foodType{
+    text-decoration:none;
+    color: white;
+}
+.bord{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.healthy{
+    position: absolute;
+    bottom: -30%;
+    margin-left: -1%;
+}
+
+#logopic{
+    margin-top: 30%;
+    margin-left: 15%;
+}
+#textheader{
+    margin-left: 20%;
+    color: white;
+    font-family: 'Abril Fatface', cursive;
+    font-size:250%;
+    margin-bottom: 32%;
+}
+#rightdiet{
+    background-color: rgb(247, 247, 37);
+    color: black;
+}
+.backgroundcol{
+    background: #AFC2C6;
+    height: 100%;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: relative;
+}
+
+main{
+    color: black;
+
+}
+.tips{
+    font-family: 'Abril Fatface', cursive;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 20%;
+    font-size: 300%;
+}
+
+.titleDiet{
+    font-family: 'Abril Fatface', cursive;
+    text-align: center; 
+    font-size: 300%;
+    margin-top:5%;
+    margin-bottom: 5%;
+}
+
+.tipNumber{
+    margin-bottom: 5%;
+}
+
+a:focus{
+    color: white;
+}
+
+.title, .meniu{
+    margin-bottom: 5%;
+}
+
+.submitQuiz{
+    align-content: center;
+}
+.quizSubmit{
+    font-family: 'Lato', sans-serif;
+    color: white;
+    font-size: 1.5rem;
+}
+.quizText{
+    font-family: 'Lato', sans-serif;
+    color: white;
+    font-size: 1rem;
+}
+.quizTitle{
+    font-weight: bold;
+}
+p{
+    font-family: 'Lato', sans-serif;
+}
+
+.navVegan{
+    margin-bottom: 10%;
+}
+
+#mocktailMenu{
+    color: black;
+}
+
+p{
+    color: black;
+}
+
+#afterSubmit{
+    visibility: hidden;
+}
+
+#logo{
+    padding-left: 10em;
+}
+.navbar{
+    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0,0,0,0.6));
+}
+.card{
+    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0,0,0,0.6));
+    color: black;
+}
+
+.card-title{
+    color: black;
+}
+
+.card-text{
+    color: black;
+}
+
+.form-control{
+    opacity: 0.6;
+}
+
+.form-control:focus{
+    opacity: 0.6;
+}
+
+.form-select{
+    opacity: 0.6;
+}
+
+.form-label:focus{
+    opacity: 0.6;
+}
+
+.navbar{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.mr-auto{
+    margin-right: auto;
+}
+
+.nav-link{
+    font-size: 1.3rem;
+}
+
+.meniu{
+    font-family: 'Lato', sans-serif;
+    color: white;
+}
+
+ }

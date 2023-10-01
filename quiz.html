@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="diet.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <section class="backgroundcol">
+            <nav class="navbar navbar-dark navbar-expand-lg ">
+                <a href="main.html" class="navbar-brand"><img src="images/logo-diet.png" alt="" height="40vh"></a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-items">
+                    <a href="dishes.html" class="nav-link">Dishes</a>
+                </li>
+                <li class="nav-item">
+                    <a href="drinks.html" class="nav-link">Drinks</a>
+                </li>
+                <li class="nav-item">
+                    <a href="quiz.html" class="nav-link">Quiz</a>
+                </li>
+            </ul>
+            <div class="navbar-nav ">
+            <div class="nav-link">
+                Hi,
+                <span id="fullName">
+                    David
+                </span>
+                !
+            </div>
+            </nav>
+            <section class="container-lg">
+                <div class="row">
+                    <div class="col-lg-8">
+                    <img id="logopic" src="images/logo-diet.png" alt="">
+                     <h1 id="textheader"><span id="rightdiet">#quiz</span></h1>
+                  </div>
+            </section>
+        </section>
+    </header>
+    <main>
+        <h1 class="titleDiet" style="color:black;">Quiz Time</h1>
+        <section class="container meniu">
+        <div class="row">
+            <div class="col-lg">
+            <div class="card" style="width: 30rem;">
+            <form id="quiz" name="quiz" method="get" action="#" class="quizText">
+            <label class="form-label quizTitle">Which one is more effective for waking you up?</label><br>
+            <input type="radio" id="coffee" name="wakeUp" value="coffee">
+            <label for="coffee">Coffee</label><br>
+            <input type="radio" id="apple" name="wakeUp" value="apple">
+            <label for="apple">Apple</label><br>
+            <br>
+            <label class="form-label quizTitle">Should everyone eat 2000 calories a day?</label><br>
+            <input type="radio" id="yesCalories" name="calories" value="yesCalories">
+            <label for="yesCalories">Yes, the FDA uses 2000 calorie reference as a general guideline</label><br>
+            <input type="radio" id="noCalories" name="calories" value="noCalories">
+            <label for="noCalories">No, it can vary based on: sex, height, weight, age and activity level. Check a verified source to check how many calories you should eat a day.</label><br>
+            <br>
+            <label class="form-label quizTitle">Can all supplements help you lose weight?</label><br>
+            <input type="radio" id="yesSupplements" name="supplements" value="yesSupplements">
+            <label for="yesSupplements"> Yes </label> <br>
+            <input type="radio" id="noSupplements" name="supplements" value="noSupplements">
+            <label for="noSupplements">No, the main reason supplemets work for some people is the placebo effect. Most supplements for weight loss are ineffective.</label><br>
+            <br>
+            <label class="form-label quizTitle">Does fat make you gain weight?</label><br>
+            <input type="radio" id="yesFat" name="fat" value="yesFat">
+            <label for="yesFat">Yes</label> <br>
+            <input type="radio" id="noFat" name="fat" value="noFat">
+            <label for="noFat">Fat has often been blamed for the obesity epidemic. While it contributes to your total calorie intake, fat alone does not cause weight gain.</label> <br>
+            <br>
+            <label class="form-label quizTitle">Are diet foods helpful for losing weight?</label><br>
+            <input type="radio" id="yesDiet" name="dietFood" value="yesDiet">
+            <label for="yesDiet"> Yes, of course </label><br>
+            <input type="radio" id="noDiet" name="dietFood" value="noDiet">
+            <label for="noDiet"> No. Often times, products marketed as diet foods are junk foods in disguise, as they are heavily processed and may harbor hidden ingredients.</label><br>
+            <br>
+            <button type="button" id="submit" name="submit" class="btn btn-dark text-center ">Submit</button>
+            <br>
+            </form>
+            </div>
+            </div>
+        
+        <!--
+            This code is based upon a tutorial from Kevin Briggs
+            Author: Kevin Briggs
+            Location: https://youtu.be/C7NsIRhoWuE
+            Accessed:  11/04/2022
+        -->
+        <div class="col-lg card text-center" id="afterSubmit" style="width: 30rem;">
+        <br>
+        <p id="response" class="quizSubmit quizTitle">You got <span id="score"></span> out of 5.</p>
+        <br>
+        <img id="picture">
+        </div>
+        <!--The credits end here-->
+        </div>
+       </section>
+    </div>
+    </main>
+    <footer>
+
+    </footer>
+ 
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript">
+    var storedData = JSON.parse(localStorage.getItem("clientData"));
+        //getting the index of the last user
+        var index=storedData.clients.length-1;
+        document.getElementById("fullName").innerHTML=storedData.clients[index].fullName;
+        document.getElementById("submit").addEventListener("click", check);
+            var form = document.getElementById("quiz");
+
+            //console.log(caloriesSelected); 
+
+            function check(){
+            var pictures=["images/win.gif","images/close.gif","images/nextTime.gif"];
+            
+            var countCorrectAnswers=0;
+            var wake = form.elements["wakeUp"];
+            var wakeSelected = checkRadioInput(wake);
+
+            var calories = form.elements["calories"];
+            var caloriesSelected = checkRadioInput(calories);
+
+            var supplements = form.elements["supplements"];
+            var supplementsSelected = checkRadioInput(supplements);
+
+            var fat = form.elements["fat"];
+            var fatSelected = checkRadioInput(fat);
+
+            var diet = form.elements["dietFood"];
+            var dietSelected = checkRadioInput(diet);
+                if(wakeSelected=="apple"){
+                    countCorrectAnswers++;
+                }
+
+                if(caloriesSelected=="noCalories"){
+                    countCorrectAnswers++;
+                    
+                }
+
+                if(supplementsSelected=="noSupplements"){
+                    countCorrectAnswers++;
+                }
+
+                if(fatSelected=="noFat"){
+                    countCorrectAnswers++;
+                }
+
+                if(dietSelected=="noDiet"){
+                    countCorrectAnswers++;
+                }
+                var range;
+                if(countCorrectAnswers>=4){
+                    range=0;
+                }
+                if(countCorrectAnswers>1 && countCorrectAnswers<4){
+                    range=1;
+                }
+                if(countCorrectAnswers<2){
+                    range=2;
+                }
+                document.getElementById("score").innerHTML=countCorrectAnswers;
+            // This code is based upon a tutorial from Kevin Briggs
+            // Author: Kevin Briggs
+            // Location: https://youtu.be/C7NsIRhoWuE
+            // Accessed:  11/04/2022
+                document.getElementById("picture").src=pictures[range];
+                document.querySelector("#afterSubmit").style.visibility="visible";
+            // The credits end here
+            }
+
+
+            function checkRadioInput(radioButtons){
+            //loop through list of radio buttons
+            for (var i = 0; i < radioButtons.length; i++) {
+                if (radioButtons[i].checked ) {
+                val = String(radioButtons[i].value);
+
+                return val;
+                }
+                }
+            }
+    </script>
+</body>
+</html>

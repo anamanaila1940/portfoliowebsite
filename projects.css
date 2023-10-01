@@ -1,0 +1,421 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+  }
+  @media screen and (min-width: 10px) and (max-width: 1024px){
+    ul{
+        height: 10vh;
+        width: 70vw;
+        min-width: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: auto;
+        list-style: none;
+      }
+      #active a{
+       color: white;
+      }
+      #active a::after{
+       content: '';
+       text-decoration: none;
+       position: absolute;
+       background-color: #e6cbe2;
+       height: 3px;
+       width: 0;
+       left: 0;
+       bottom: -8px;
+       width: 100%;
+      }
+     
+      nav ul li a{
+        text-decoration: none;
+        position: relative;
+        list-style: none;
+        color: #a0a0a0;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        padding: 0 10px;
+      }
+     
+      nav ul li a::after{
+       content: '';
+       text-decoration: none;
+       position: absolute;
+       background-color: #e6cbe2;
+       height: 3px;
+       width: 0;
+       left: 0;
+       bottom: -8px;
+       transition: all 0.5s ease-in;
+     }
+     nav ul li a:hover{
+       color: white;
+     }
+     nav ul li a:hover::after{
+     width: 100%;
+     }
+     .mainpart{
+        height: 100vh;
+        background-image: url(projects2.png);
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    nav{
+        border: 1px solid transparent;
+          backdrop-filter: blur(0.5rem);
+          overflow: hidden;
+      }
+      .bg{
+        background-color: rgba(255,255,255,0.1);
+      }  
+      body {
+        margin: 0;
+        display: grid;
+        background: var(--bg-img );
+      }
+      footer{
+        padding-top: 5%;
+        padding-bottom: 5%;
+        color: rgb(184, 180, 180);
+        background-color: rgb(48, 48, 48);
+      }
+      
+       footer .container{
+         padding-bottom: 0%;
+       }
+      footer h5{
+        color: white;
+      }
+      .media .row{
+        justify-content: center;
+      }
+      .logo{
+        padding-top: 5%;
+      }
+      .contact .col p{
+        text-align: center;
+      }
+  }
+  @media screen and (min-width: 1024px) and (max-width: 1990px){
+    ul{
+        height: 10vh;
+        width: 70vw;
+        min-width: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: auto;
+        list-style: none;
+      }
+      #active a{
+       color: white;
+      }
+      #active a::after{
+       content: '';
+       text-decoration: none;
+       position: absolute;
+       background-color: #e6cbe2;
+       height: 3px;
+       width: 0;
+       left: 0;
+       bottom: -8px;
+       width: 100%;
+      }
+     
+      nav ul li a{
+        text-decoration: none;
+        position: relative;
+        list-style: none;
+        color: #a0a0a0;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        padding: 0 10px;
+      }
+     
+      nav ul li a::after{
+       content: '';
+       text-decoration: none;
+       position: absolute;
+       background-color: #e6cbe2;
+       height: 3px;
+       width: 0;
+       left: 0;
+       bottom: -8px;
+       transition: all 0.5s ease-in;
+     }
+     nav ul li a:hover{
+       color: white;
+     }
+     nav ul li a:hover::after{
+     width: 100%;
+     }
+     .mainpart{
+        height: 100vh;
+        background-image: url(projects1.png);
+        background-attachment: fixed;
+        background-size: cover;
+        width: 100%;
+    }
+    nav{
+        border: 1px solid transparent;
+          backdrop-filter: blur(1rem);
+          overflow: hidden;
+      }
+      .bg{
+        background-color: rgba(255,255,255,0.1);
+      }
+      body {
+        margin: 0;
+        display: grid;
+        background: var(--bg-img );
+      }
+      footer{
+        padding-top: 5%;
+        padding-bottom: 5%;
+        color: rgb(184, 180, 180);
+        background-color: rgb(48, 48, 48);
+      }
+      
+       footer .container{
+         padding-bottom: 0%;
+       }
+      footer h5{
+        color: white;
+      }
+      .media .row{
+        justify-content: center;
+      }
+      .logo{
+        padding-top: 5%;
+      }
+      .contact .col p{
+        text-align: center;
+      }
+  }
+
+  @media screen and (min-width: 1990px) and (orientation: landscape){
+    ul{
+        height: 10vh;
+        width: 70vw;
+        min-width: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: auto;
+        list-style: none;
+      }
+      #active a{
+       color: white;
+      }
+      #active a::after{
+       content: '';
+       text-decoration: none;
+       position: absolute;
+       background-color: #e6cbe2;
+       height: 3px;
+       width: 0;
+       left: 0;
+       bottom: -8px;
+       width: 100%;
+      }
+     
+      nav ul li a{
+        text-decoration: none;
+        position: relative;
+        list-style: none;
+        color: #a0a0a0;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        padding: 0 10px;
+      }
+     
+      nav ul li a::after{
+       content: '';
+       text-decoration: none;
+       position: absolute;
+       background-color: #e6cbe2;
+       height: 3px;
+       width: 0;
+       left: 0;
+       bottom: -8px;
+       transition: all 0.5s ease-in;
+     }
+     nav ul li a:hover{
+       color: white;
+     }
+     nav ul li a:hover::after{
+     width: 100%;
+     }
+     .mainpart{
+        height: 100vh;
+        background-image: url(projects3.png);
+        background-attachment: fixed;
+        background-size: cover;
+        width: 100%;
+    }
+    nav{
+        border: 1px solid transparent;
+          backdrop-filter: blur(1rem);
+          overflow: hidden;
+      }
+      .bg{
+        background-color: rgba(255,255,255,0.1);
+      }
+      body {
+        margin: 0;
+        display: grid;
+        background: var(--bg-img );
+      }
+      footer{
+        padding-top: 5%;
+        padding-bottom: 5%;
+        color: rgb(184, 180, 180);
+        background-color: rgb(48, 48, 48);
+      }
+      
+       footer .container{
+         padding-bottom: 0%;
+       }
+      footer h5{
+        color: white;
+      }
+      .media .row{
+        justify-content: center;
+      }
+      .logo{
+        padding-top: 5%;
+      }
+      .contact .col p{
+        text-align: center;
+      }
+  }
+  .com{
+    color: #e6cbe2;
+}
+.titleM{
+    padding-top: 10%;
+    color: white;
+    overflow: hidden;
+    text-align: center;
+}
+.titlep{
+    text-align: center;
+}
+.projimg{
+align-items: center;
+}
+.projimg img{
+    width: 25rem;
+    height: 15rem;
+    border-radius: 5%;
+    border-color: white;
+    border: 3px solid;
+    padding: 1px;
+    box-shadow: 5px 10px;
+    color: white;
+    transition: 0.6s ease-in-out;
+}
+.projimg img:hover{
+    transform: scale(1.1);
+}
+main .container{
+    padding-top: 5%;
+    padding-bottom: 10%;
+}
+main .container .col-sm{
+    padding: 2%;
+}
+main .container h3{
+    border: 1px solid;
+  padding: 1px;
+  box-shadow: 5px 10px;
+  color: rgb(255, 255, 255);
+  width: 40%;
+  align-items: center;
+}
+
+main .container .pleft{
+    text-align: left;
+    color: white;
+    padding-top: 2%;
+    margin-bottom: 1%;
+}
+.lang{
+    border: 1px solid;
+    color: #ffffff;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.button .lang:hover{
+    border: 2px solid;
+    color: #e6cbe2;
+}
+.log{
+    padding: 0%;
+    display: inline;
+}
+
+.git{
+    opacity: 30%;
+}
+.git:hover{
+    opacity: 100%;
+}
+.doc{
+    opacity: 30%;
+}
+.doc:hover{
+    opacity: 100%;
+}
+.proj .row{
+    padding-bottom: 10%;
+}
+footer h5{
+    text-align: center;
+}
+footer p{
+    text-align: center;
+}
+footer .logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 5%;
+}
+#buttonD{
+    text-decoration: none;
+    background-color: rgb(48, 48, 48,0.5);
+    text-align: center;
+    color: #ffffff;
+}
+.button{
+    padding-top: 1%;
+    text-align: center;
+}
+.mainbit#blur.active{
+filter: blur(20px);
+pointer-events: none;
+user-select: none;
+}
+#popup{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0,0,0,.30);
+    background: #ffffff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+#popup.active{
+  top: 50%;
+  visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}

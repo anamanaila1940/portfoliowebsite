@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="diet.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        body{
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="background-image">
+    <header>
+        
+    </header>
+    <main >
+        <div class="container formPage">
+            
+            <div class="text-left" class="row justify-content-left my-5">
+    </div>
+    <div class="row justify-content-left my-4"> 
+        <div class="col-lg-6">
+        <form id="contactForm" action="main.html" method="get">
+
+            <section class="card">
+                <div class="card-body">
+                <h1>Tell us about you!</h1>
+                    <p id="fullNamePara">
+                            <label for="fullName" class="form-label">Full Name*:</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="e.g Dave Smith" required="" class="form-control">
+                    </p>
+
+                    <p id="emailPara">
+                            <label for="email" class="form-label">Email*:</label>
+                            <input type="email" id="email" name="email" placeholder="name@email.com" required="" class="form-control">
+                    </p>
+                    
+                    <p id="dietPara">
+                        <label class="form-label">Diet*:</label>
+                        <br>
+                        <input type="radio" id="diet-carnivore" name="eating" value="carnivore" required>
+                        <label for="diet-carnivore">Carnivore</label>
+                        <br>
+                        <input type="radio" id="diet-vegan" name="eating" value="vegan" required>
+                        <label for="diet-vegan">Vegan</label>
+                        <br>
+                        <input type="radio" id="diet-vegetarian" name="eating" value="vegetarian" required>
+                        <label for="diet-vegetarian">Vegetarian</label>
+                    </p>
+
+                    <p id="caloriesPara">
+                        <label class="form-label">Preferred number of calories*:</label>
+                        <br>
+                        <input type="radio" id="calories-1000" name="calor" value="1000" required>
+                        <label for="calories-1000">1000</label>
+                        <br>
+                        <input type="radio" id="calories-1500" name="calor" value="1500" required>
+                        <label for="calories-1500">1500</label>
+                        <br>
+                        <input type="radio" id="calories-2000" name="calor" value="2000" required>
+                        <label for="calories-2000">2000</label>            
+                    </p>
+            
+            <div class="row">
+            
+            <div class="col-lg-6">
+            <button id="submit" name="submit" class="btn btn-dark">Let's start</button>
+            </div>
+            
+            <div class="col-lg-6 ">
+        
+             <img id="logo" class="justify-content-right" src="images/logo-diet.png" alt="logo with the tinder flame and the word diet" height="40vh">
+            </div>
+            </div>
+            </div>
+        </div>
+        </section>
+        </form>
+    </div>
+    </div>
+    </main>
+    <footer>
+    </footer>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript">
+            var clientID;
+    
+    var allClientData = JSON.parse(retrieveData());
+    if (allClientData != null){
+            clientID = allClientData.clients.length;
+    }
+    else {
+            allClientData = {"clients": []};
+            clientID = 0;
+    }
+
+    document.getElementById("submit").addEventListener("click", validate);
+
+    var requiredFields = document.getElementById("contactForm").querySelectorAll("[required]");
+
+    for (var i = 0; i < requiredFields.length; i++){
+            requiredFields[i].addEventListener("keydown", function() {
+                    removeFeedback(this.id);
+            });
+    }
+
+    function validate() {
+            //begin assuming all fields are full
+            var countEmpty = 0;
+
+            for (var i = 0; i < requiredFields.length; i++){
+
+                    var element = requiredFields[i];
+
+                    //create object that contains the feedback span, will be "null" if it hasn't already been created
+                    var checkSpanExists = document.getElementById(element.id + "feedbackSpan");
+
+                    //if they've entered nothing
+                    if (element.value == "") {
+                            //increase count of empty fields
+                            countEmpty++;
+
+                                //if feedback hasn't already been added
+                                if (checkSpanExists == null) {
+
+                                        //create the span and add contents, give the span element an id
+                                        var feedbackSpan = document.createElement("span");
+                                        var feedbackText = document.createTextNode("This field is required");
+                                        feedbackSpan.setAttribute("id", element.id + "feedbackSpan");
+
+                                        //append the text to the span itself
+                                        feedbackSpan.appendChild(feedbackText);
+
+                                        var elementId = element.id + "Para";
+
+                                        //get the parent element, which is a paragraph
+                                        var para = document.getElementById(elementId);
+
+                                        //append the span to the parent paragraph
+                                        para.appendChild(feedbackSpan);
+                                }
+                        }
+                }
+                //if countEmpty is still 0 all required fields are complete so store the data
+                if (countEmpty == 0){
+                        addClient();
+                }
+        }
+
+        //function to remove feedback spans, if they exost
+        function removeFeedback(id){
+                var checkSpanExists = document.getElementById(id + "feedbackSpan");
+
+                if (checkSpanExists != null){
+                        var elementToRemove = checkSpanExists;
+                        elementToRemove.parentNode.removeChild(elementToRemove);
+                }
+        }
+
+    //function to add a Client
+    function addClient(){
+
+            var form = document.getElementById("contactForm");
+
+            var fullName = String(document.getElementById("fullName").value);
+            var email = String(document.getElementById("email").value);
+            
+
+            var diet = form.elements["eating"];
+            var dietSelected = checkRadioInput(diet);
+
+            var calories = form.elements["calor"];
+            var caloriesSelected = checkRadioInput(calories);
+
+            var thisClientData = {
+                "clientID": clientID, "fullName": fullName, "email": email,
+                "dietSelect": dietSelected, "calories": caloriesSelected
+            };
+
+            allClientData.clients.push(thisClientData);
+
+            var jsonString = JSON.stringify(allClientData);
+            localStorage.setItem("clientData", jsonString);
+    }
+
+    function checkRadioInput(radioButtons){
+            //loop through list of radio buttons
+            for (var i = 0; i < radioButtons.length; i++) {
+                    if (radioButtons[i].checked ) {
+                            val = String(radioButtons[i].value);
+
+                            return val;
+                    }
+            }
+    }
+
+    function retrieveData() {
+            var storedData = localStorage.getItem("clientData");
+            return storedData;
+    }
+    </script>
+</body>
+</html>

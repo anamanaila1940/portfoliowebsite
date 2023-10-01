@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="diet.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <section class="backgroundcol">
+        <nav class="navbar navbar-dark navbar-expand-lg ">
+            <a href="main.html" class="navbar-brand"><img src="images/logo-diet.png" alt="logo with the tinder flame and the word diet" height="40vh"></a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-items">
+                <a href="dishes.html" class="nav-link">Dishes</a>
+            </li>
+            <li class="nav-item">
+                <a href="drinks.html" class="nav-link">Drinks</a>
+            </li>
+            <li class="nav-item">
+                <a href="quiz.html" class="nav-link">Quiz</a>
+            </li>
+        </ul>
+        <div class="navbar-nav ">
+        <div class="nav-link">
+            Hi,
+            <span id="fullName">
+                David
+            </span>
+            !
+        </div>
+        </nav>
+        <section class="container-lg">
+            <div class="row">
+                <div class="col-lg-8">
+                <img id="logopic" src="images/logo-diet.png" alt="logo with the tinder flame and the word diet">
+                 <h1 id="textheader">Let's fall in love with <br><span id="rightdiet">the right diet</span> !</h1>
+                </div>
+                <div class="col-lg-4">
+                    <img class="healthy" src="images/healthy.png" alt="image of a bag full of healthy groceries">
+                </div>
+              </div>
+        </section>
+    </section>
+    </header>
+    <main>
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="tips">Tips</h1>
+            </div>
+        </div>
+        <div class="row tipNumber">
+            <div class="col-lg">
+                <h2>#1 Fill up on Fiber</h2>
+                <p>Fiber is found in healthy foods including vegetables, fruits, beans and whole grains.
+                    Some studies have shown that simply eating more fiber-rich foods may help you lose weight and keep it off.
+                    Increasing your intake is as easy as adding beans to your salad, eating oats for breakfast or snacking on fiber-rich nuts and seeds.</p>
+            </div>
+            <div class="col-lg">
+                <h2>#2 Ditch Added Sugar</h2>
+                <p>Added sugar, especially from sugary drinks, is a major reason for unhealthy weight gain and health problems like diabetes and heart disease.
+                    Plus, foods like candy, soda and baked goods that contain lots of added sugars tend to be very low in the nutrients your body needs to stay healthy. 
+                    Cutting out foods high in added sugars is a great way to lose excess weight.  
+                    It's important to note that even foods promoted as “healthy” or “organic” can be very high in sugar. Therefore, reading nutrition labels is a must.</p>
+            </div>
+        </div>
+        <div class="row tipNumber">
+            <div class="col-lg">
+                <h2>#3 Make Room for Healthy Fat</h2>
+                <p>While fat is often the first thing that gets cut when you're trying to slim down, healthy fats can actually help you reach your weight loss goals.
+                    In fact, following a high-fat diet that's rich in foods like olive oil, avocados and nuts has been shown to maximize weight loss in several studies.
+                    What's more, fats help you stay fuller for longer, decreasing cravings and helping you stay on track.</p>
+            </div>
+            <div class="col-lg">
+                <h2>#4 Minimize Distractions</h2>
+                <p>While consuming meals in front of your TV or computer may not seem like diet sabotage, eating while distracted may cause you to consume more calories and gain weight.
+                    Eating at the dinner table, away from potential distractions, is not only a good way to keep your weight down — it also allows you time to reconnect with loved ones.
+                    Smartphones are another device you should set aside while you're eating. Scrolling through emails or your Instagram or Facebook feed is just as distracting as a TV or computer.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript">
+    var storedData = JSON.parse(localStorage.getItem("clientData"));
+        //getting the index of the last user
+        var index=storedData.clients.length-1;
+        document.getElementById("fullName").innerHTML=storedData.clients[index].fullName;
+
+    </script>
+</body>
+</html>
